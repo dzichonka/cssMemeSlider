@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --main-color: #132223;
+  --transparent-color: rgba(0, 0, 0, 0);
+  --dark-color: #0f474b;
+  --light-color: #579ba0;
+  --white-color: #d0e0e9;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #061615;
+  /* background: var(--main-color); */
+  color: var(--white-color);
+  /* width: 100vw; */
+}
+
+.container {
+  /* width: 1024px; */
+  width: 90vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slider {
+  border-radius: 1em;
+  background-color: var(--main-color);
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(10, 2fr) repeat(10, 1fr);
+  grid-template-areas: "a a a a a a a a a a a a a a a a a a a a" "b b b b b b b b b b c d e f g h i j k l";
+}
+
+.memes {
+  grid-area: a;
+  width: 100%;
+  overflow: hidden;
+}
+
+.lables {
+  width: 100%;
+  overflow: hidden;
+  grid-area: b;
+}
+
+.memes>ul,
+.lables>.descr {
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  width: 1000%;
+  list-style: none;
+  transition: transform 0.5s ease-in-out;
+
+}
+
+.lables>.descr {
+  text-align: start;
+}
+
+.memes ul>li {
+  width: 100%;
+  padding-bottom: 3vw;
+}
+
+.lables>.descr>label {
+  width: 100%;
+}
+
+.memes ul>li>img {
+  padding: 2em;
+  max-height: 60vh;
+  object-fit: contain;
+  /* margin: auto; */
+  width: 100%;
+}
+
+input:nth-child(1) {
+  grid-area: c;
+}
+
+input:nth-child(2) {
+  grid-area: d;
+}
+
+input:nth-child(3) {
+  grid-area: e;
+}
+
+input:nth-child(4) {
+  grid-area: f;
+}
+
+input:nth-child(5) {
+  grid-area: g;
+}
+
+input:nth-child(6) {
+  grid-area: h;
+}
+
+input:nth-child(7) {
+  grid-area: i;
+}
+
+input:nth-child(8) {
+  grid-area: j;
+}
+
+input:nth-child(9) {
+  grid-area: k;
+}
+
+input:nth-child(10) {
+  grid-area: l;
+}
+
+#button1:checked~.memes>ul,
+#button1:checked~.lables>.descr {
+  transform: translateX(0%);
+}
+
+#button2:checked~.memes>ul,
+#button2:checked~.lables>.descr {
+  transform: translateX(-10%);
+}
+
+#button3:checked~.memes>ul,
+#button3:checked~.lables>.descr {
+  transform: translateX(-20%);
+}
+
+#button4:checked~.memes>ul,
+#button4:checked~.lables>.descr {
+  transform: translateX(-30%);
+}
+
+#button5:checked~.memes>ul,
+#button5:checked~.lables>.descr {
+  transform: translateX(-40%);
+}
+
+#button6:checked~.memes>ul,
+#button6:checked~.lables>.descr {
+  transform: translateX(-50%);
+}
+
+#button7:checked~.memes>ul,
+#button7:checked~.lables>.descr {
+  transform: translateX(-60%);
+}
+
+#button8:checked~.memes>ul,
+#button8:checked~.lables>.descr {
+  transform: translateX(-70%);
+}
+
+#button9:checked~.memes>ul,
+#button9:checked~.lables>.descr {
+  transform: translateX(-80%);
+}
+
+#button10:checked~.memes>ul,
+#button10:checked~.lables>.descr {
+  transform: translateX(-90%);
+}
+
+input[type="radio"] {
+  appearance: none;
+  margin: 0;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  background-color: var(--dark-color);
+  border: 0.5em solid var(--main-color);
+  border-radius: 100%;
+  transition: all 0.5s;
+}
+
+input[type="radio"]:hover {
+  transform: scale(1.5);
+}
+
+input[type="radio"]:hover {
+  background-color: var(--light-color);
+  /* border-color: var(--dark-color); */
+}
+
+input[type="radio"]:checked {
+  /* scale: 2; */
+  background-color: var(--light-color);
+  /* border-color: var(--light-color); */
+}
+
+@media (max-width: 678px) {
+  .slider {
+    grid-template-areas: "a a a a a a a a a a a a a a a a a a a a" ". . . . . c d e f g h i j k l . . . . ." "b b b b b b b b b b b b b b b b b b b b";
+    grid-template-columns: repeat(20, 1fr);
+  }
+
+  .memes ul>li>img {
+    max-height: 80vh;
+  }
+
+  .lables>.descr>label {
+    text-align: center;
+    padding: 3em;
+  }
+}

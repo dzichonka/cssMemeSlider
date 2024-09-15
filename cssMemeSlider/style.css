@@ -2,6 +2,9 @@
 
 :root {
   --main-color: #132223;
+  --transparent-color: rgba(0, 0, 0, 0);
+  --dark-color: #0f474b;
+  --light-color: #579ba0;
   --white-color: #d0e0e9;
 }
 
@@ -11,80 +14,138 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   background: var(--main-color);
   color: var(--white-color);
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 .container {
   width: 90vw;
   margin: 0 auto;
   text-align: center;
-  padding: 10vw;
+
+  /* padding: 10vw; */
 }
 
-.slider {
+/* .slider {
+  display: flex;
+  flex-direction: column;
+} */
+
+.button {
   display: flex;
   flex-direction: column;
 }
 
 .memes {
   width: 100%;
-  height: 50%;
   overflow: hidden;
+  /* margin: 5vw 0; */
 }
 
-.memes>ul {
+.memes ul,
+.lables {
+  font-size: 1.5em;
   display: flex;
+  align-items: center;
   padding: 0;
   margin: 0;
-  width: 900%;
+  width: 1000%;
   list-style: none;
   transition: transform 0.5s ease-in-out;
+
 }
 
-.memes>ul>li {
+.lables>label {
   width: 100%;
 }
 
-.memes>ul>li>img {
+.memes ul>li {
+  width: 100%;
+  padding: 5vw;
+}
+
+.memes ul>li>img {
+  max-height: 50vh;
+  object-fit: contain;
   margin: auto;
   width: 100%;
 }
 
-#slide1:checked~ul {
+#button1:checked~.memes>ul,
+#button1:checked~.lables {
   transform: translateX(0%);
 }
 
-#slide2:checked~ul {
-  transform: translateX(-100%);
+#button2:checked~.memes>ul,
+#button2:checked~.lables {
+  transform: translateX(-10%);
 }
 
-#slide3:checked~ul {
-  transform: translateX(-200%);
+#button3:checked~.memes>ul,
+#button3:checked~.lables {
+  transform: translateX(-20%);
 }
 
-#slide4:checked~ul {
-  transform: translateX(-300%);
+#button4:checked~.memes>ul,
+#button4:checked~.lables {
+  transform: translateX(-30%);
 }
 
-#slide5:checked~ul {
-  transform: translateX(-400%);
+#button5:checked~.memes>ul,
+#button5:checked~.lables {
+  transform: translateX(-40%);
 }
 
-#slide6:checked~ul {
-  transform: translateX(-500%);
+#button6:checked~.memes>ul,
+#button6:checked~.lables {
+  transform: translateX(-50%);
 }
 
-#slide7:checked~ul {
-  transform: translateX(-600%);
+#button7:checked~.memes>ul,
+#button7:checked~.lables {
+  transform: translateX(-60%);
 }
 
-#slide8:checked~ul {
-  transform: translateX(-700%);
+#button8:checked~.memes>ul,
+#button8:checked~.lables {
+  transform: translateX(-70%);
 }
 
-#slide9:checked~ul {
-  transform: translateX(-800%);
+#button9:checked~.memes>ul,
+#button9:checked~.lables {
+  transform: translateX(-80%);
+}
+
+#button10:checked~.memes>ul,
+#button10:checked~.lables {
+  transform: translateX(-90%);
+}
+
+input[type="radio"] {
+  appearance: none;
+  margin: 0;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  background-color: var(--dark-color);
+  border: 1em solid var(--main-color);
+  border-radius: 100%;
+  /* outline: none; */
+  transition: all 0.5s;
+}
+
+input[type="radio"]:hover {
+  transform: scale(1.5);
+}
+
+input[type="radio"]:hover {
+  background-color: var(--light-color);
+  /* border-color: var(--dark-color); */
+}
+
+input[type="radio"]:checked {
+  /* scale: 2; */
+  background-color: var(--light-color);
+  /* border-color: var(--light-color); */
 }
